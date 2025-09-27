@@ -41,7 +41,12 @@ research/
 - Context compacting i utrata kontekstu
 - Strategie optymalizacji kontekstu
 
-### 5. **COMPETITIVE_ANALYSIS.md** - Co już istnieje
+### 5. **ASSUMPTION_INVALIDATION.md** - Kiedy założenia się zmieniają
+- REST API → Pub/Sub w trakcie implementacji
+- Cascade effect i orphaned code problem
+- Assumption tracking i change impact analysis
+
+### 6. **COMPETITIVE_ANALYSIS.md** - Co już istnieje
 - Sourcegraph, GitHub Copilot, Backstage...
 - Gdzie są luki w istniejących rozwiązaniach?
 - Co robimy inaczej/lepiej?

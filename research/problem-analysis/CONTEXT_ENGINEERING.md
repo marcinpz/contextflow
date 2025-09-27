@@ -319,7 +319,24 @@ def generate_contextual_documentation(self, code_element: str) -> Documentation:
 **Problem**: Sensitive information in context must be protected
 **Solution**: Context classification and filtering systems
 
-### Challenge 5: Context Scalability  
+### Challenge 5: Assumption Invalidation (CRITICAL)
+**Problem**: Initial architectural assumptions get invalidated mid-development, causing cascade of changes
+**Symptoms**:
+- External dependencies change (REST API → Pub/Sub)
+- Performance assumptions fail (30-second response times)
+- Requirements evolve (simple request/response → event sourcing)
+- AI-generated code becomes complex to verify and cleanup
+
+**Solution**: Assumption Tracking & Change Impact Management
+- Track assumptions with confidence levels and evidence
+- Map dependencies between assumptions and code/config/docs
+- Analyze cascade impact of assumption changes
+- Generate cleanup checklists and verify completeness
+- Support architectural change workflows
+
+**See**: `research/problem-analysis/ASSUMPTION_INVALIDATION.md`
+
+### Challenge 6: Context Scalability  
 **Problem**: Large organizations have massive amounts of potential context
 **Solution**: Hierarchical context indexing and intelligent pre-filtering
 
