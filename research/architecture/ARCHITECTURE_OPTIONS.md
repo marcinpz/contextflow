@@ -185,30 +185,36 @@ CREATE INDEX idx_target ON dependencies(target_type, target_name);
 CREATE INDEX idx_source ON dependencies(source_file);
 ```
 
-## Recommended Architecture: Hybrid with Pragmatic Choices
+## Recommended Architecture: MCP Hub with Progressive Complexity
 
-Based on the analysis, I recommend a **Progressive Architecture** that starts simple and evolves:
+**UPDATED**: Based on plugin system analysis, I recommend a **MCP Hub Architecture** that starts simple and evolves:
 
-### Phase 1: SQLite-based MVP (2-3 weeks)
+### Phase 1: Core + Basic Plugins (3-4 weeks)
 - SQLite for dependency storage
 - File watchers for real-time updates
 - Basic parsers for Java, YAML, HTTP files
-- Simple MCP server integration
+- **Plugin system architecture**
+- **MCP Client Manager for external data sources**
+- **Our MCP Server for AI integration**
+- Simple Jira + GitHub plugins
 
-### Phase 2: Add Vector Search (2-3 weeks)
+### Phase 2: Communication Integration (2-3 weeks)
+- Add Slack/Teams plugins via MCP
+- Email integration (Outlook/Gmail) via MCP
+- Knowledge extraction from conversations
+- Privacy filtering and data classification
+
+### Phase 3: Enhanced Intelligence (3-4 weeks)
 - Integrate Qdrant for semantic search
-- Add embedding generation for code patterns
-- Enhanced pattern recognition
+- Add embedding generation for patterns
+- Cross-source correlation (email ↔ code ↔ issues)
+- Advanced context building
 
-### Phase 3: Graph Capabilities (3-4 weeks)
-- Migrate to Neo4j for complex relationship queries
-- Advanced impact analysis
-- Visual dependency graphs
-
-### Phase 4: Production Features (2-3 weeks)
-- Event-driven architecture
+### Phase 4: Production Scale (3-4 weeks)
+- Migrate to Neo4j for complex relationships
+- Event-driven plugin architecture
 - Performance optimizations
-- Monitoring and alerting
+- Monitoring and observability
 
 ## Key Technical Decisions
 

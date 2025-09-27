@@ -21,12 +21,17 @@ research/
 
 ## Kluczowe dokumenty do przeczytania
 
-### 1. **PROBLEM_DEFINITION.md** - Zrozum problem
+### 1. **CONTEXT_ENGINEERING.md** - Główna koncepcja
+- Co to jest Context Engineering i dlaczego to kluczowe?
+- Jak to różni się od zwykłego knowledge management?
+- Konkretne przykłady value proposition
+
+### 2. **PROBLEM_DEFINITION.md** - Zrozum problem
 - Jakie są pain pointy developerów w dużych organizacjach?
 - Kto to są nasi użytkownicy i czego potrzebują?
 - Jakie scenariusze musimy obsłużyć?
 
-### 2. **CROSS_FILE_DEPENDENCIES.md** - Konkretny przykład
+### 3. **CROSS_FILE_DEPENDENCIES.md** - Konkretny przykład
 - Dlaczego AI często "zapomina" o powiązanych plikach?
 - Przykłady: Controller → Properties → HTTP files
 - Jak to wpływa na produktywność deweloperów?
