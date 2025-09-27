@@ -1,206 +1,206 @@
 # Conceptual Work & Research Guide
 
-## Jak się zabrać do pracy nad koncepcją
+## How to Approach Conceptual Work
 
-Ten przewodnik pokazuje jak systematycznie pracować nad koncepcją MCP Knowledge Index, zanim przejdziemy do implementacji.
+This guide shows how to systematically work on the ContextFlow concept before moving to implementation.
 
-## Struktura badań
+## Research Structure
 
 ```
 research/
-├── problem-analysis/          # Analiza problemów i potrzeb
-│   ├── PROBLEM_DEFINITION.md     # Główne problemy do rozwiązania
-│   └── CROSS_FILE_DEPENDENCIES.md # Kluczowy problem: powiązania między plikami
-├── existing-solutions/        # Analiza konkurencji
-│   └── COMPETITIVE_ANALYSIS.md   # Przegląd istniejących rozwiązań
-├── architecture/              # Opcje architektoniczne
-│   └── ARCHITECTURE_OPTIONS.md  # Różne podejścia architektoniczne
-├── comparisons/              # Porównania i decyzje
-└── experiments/              # Prototypy i eksperymenty
+├── problem-analysis/          # Problem and needs analysis
+│   ├── PROBLEM_DEFINITION.md     # Main problems to solve
+│   └── CROSS_FILE_DEPENDENCIES.md # Key problem: cross-file relationships
+├── existing-solutions/        # Competitive analysis
+│   └── COMPETITIVE_ANALYSIS.md   # Overview of existing solutions
+├── architecture/              # Architectural options
+│   └── ARCHITECTURE_OPTIONS.md  # Different architectural approaches
+├── comparisons/              # Comparisons and decisions
+└── experiments/              # Prototypes and experiments
 ```
 
-## Kluczowe dokumenty do przeczytania
+## Key Documents to Read
 
-### 1. **CONTEXT_ENGINEERING.md** - Główna koncepcja
-- Co to jest Context Engineering i dlaczego to kluczowe?
-- Jak to różni się od zwykłego knowledge management?
-- Konkretne przykłady value proposition
+### 1. **CONTEXT_ENGINEERING.md** - Main Concept
+- What is Context Engineering and why is it crucial?
+- How does it differ from regular knowledge management?
+- Specific examples of value proposition
 
-### 2. **PROBLEM_DEFINITION.md** - Zrozum problem
-- Jakie są pain pointy developerów w dużych organizacjach?
-- Kto to są nasi użytkownicy i czego potrzebują?
-- Jakie scenariusze musimy obsłużyć?
+### 2. **PROBLEM_DEFINITION.md** - Understand the Problem
+- What are the pain points of developers in large organizations?
+- Who are our users and what do they need?
+- What scenarios must we handle?
 
-### 3. **CROSS_FILE_DEPENDENCIES.md** - Konkretny przykład
-- Dlaczego AI często "zapomina" o powiązanych plikach?
-- Przykłady: Controller → Properties → HTTP files
-- Jak to wpływa na produktywność deweloperów?
+### 3. **CROSS_FILE_DEPENDENCIES.md** - Specific Example
+- Why does AI often "forget" about related files?
+- Examples: Controller → Properties → HTTP files
+- How does this affect developer productivity?
 
-### 4. **CONTEXT_OPTIMIZATION.md** - Problem context bloat
-- Dlaczego AI agenty stają się coraz wolniejsze?
-- Context compacting i utrata kontekstu
-- Strategie optymalizacji kontekstu
+### 4. **CONTEXT_OPTIMIZATION.md** - Context Bloat Problem
+- Why do AI agents get slower over time?
+- Context compacting and context loss
+- Context optimization strategies
 
-### 5. **ASSUMPTION_INVALIDATION.md** - Kiedy założenia się zmieniają
-- REST API → Pub/Sub w trakcie implementacji
-- Cascade effect i orphaned code problem
-- Assumption tracking i change impact analysis
+### 5. **ASSUMPTION_INVALIDATION.md** - When Assumptions Change
+- REST API → Pub/Sub during implementation
+- Cascade effect and orphaned code problem
+- Assumption tracking and change impact analysis
 
-### 6. **COMPETITIVE_ANALYSIS.md** - Co już istnieje
+### 6. **COMPETITIVE_ANALYSIS.md** - What Already Exists
 - Sourcegraph, GitHub Copilot, Backstage...
-- Gdzie są luki w istniejących rozwiązaniach?
-- Co robimy inaczej/lepiej?
+- Where are the gaps in existing solutions?
+- What do we do differently/better?
 
-### 4. **ARCHITECTURE_OPTIONS.md** - Jak to zbudować
-- 4 różne podejścia architektoniczne
-- Zalety i wady każdego
-- Rekomendowana ścieżka rozwoju
+### 7. **ARCHITECTURE_OPTIONS.md** - How to Build It
+- 4 different architectural approaches
+- Pros and cons of each
+- Recommended development path
 
-## Praktyczne kroki do pracy koncepcyjnej
+## Practical Steps for Conceptual Work
 
-### Tydzień 1-2: Dogłębna analiza problemu
+### Week 1-2: Deep Problem Analysis
 ```bash
-# Przeczytaj dokumenty
+# Read documents
 cat research/problem-analysis/PROBLEM_DEFINITION.md
 cat research/problem-analysis/CROSS_FILE_DEPENDENCIES.md
 
-# Zastanów się nad własnymi doświadczeniami:
-# - Kiedy AI Ci "zepsuło" kod przez niepełne zmiany?
-# - Ile czasu spędzasz na szukaniu powiązanych plików?
-# - Jakie są Twoje biggest pain points?
+# Reflect on your own experiences:
+# - When did AI "break" your code with incomplete changes?
+# - How much time do you spend searching for related files?
+# - What are your biggest pain points?
 ```
 
-### Tydzień 2-3: Badanie rozwiązań konkurencyjnych
+### Week 2-3: Researching Competitive Solutions
 ```bash
-# Wypróbuj istniejące narzędzia:
+# Try existing tools:
 # 1. Sourcegraph (trial) - code search
-# 2. GitHub Copilot - AI assistance  
+# 2. GitHub Copilot - AI assistance
 # 3. Cursor - AI IDE
 # 4. Backstage - developer portal
 
-# Dokumentuj:
-# - Co działa dobrze?
-# - Gdzie są luki?
-# - Co moglibyśmy zrobić lepiej?
+# Document:
+# - What works well?
+# - Where are the gaps?
+# - What could we do better?
 ```
 
-### Tydzień 3-4: Prototypy koncepcyjne
+### Week 3-4: Conceptual Prototypes
 ```bash
-# Stwórz proste prototypy w research/experiments/
+# Create simple prototypes in research/experiments/
 mkdir -p research/experiments
 
-# Przykłady:
-# - Prosty parser Java → znajdowanie @Value("${...}")
-# - Wyszukiwanie wzorców w plikach .http
-# - Mapowanie properties między aplikation.yml a kodem
+# Examples:
+# - Simple Java parser → finding @Value("${...}")
+# - Pattern search in .http files
+# - Property mapping between application.yml and code
 ```
 
-## Kluczowe pytania do rozstrzygnięcia
+## Key Questions to Resolve
 
-### 1. Architektura
+### 1. Architecture
 - **Graph DB vs Vector DB vs Hybrid?**
-  - Neo4j dla strukturalnych powiązań?
-  - Qdrant dla semantic search?
-  - Czy potrzebujemy obu?
+  - Neo4j for structural relationships?
+  - Qdrant for semantic search?
+  - Do we need both?
 
-### 2. Integracja z AI
+### 2. AI Integration
 - **MCP vs Custom API vs Direct integration?**
-  - Jak najlepiej "wstrzyknąć" context do AI?
-  - Które AI assistanty wspierać najpierw?
+  - How to best "inject" context into AI?
+  - Which AI assistants to support first?
 
-### 3. Scope projektu
+### 3. Project Scope
 - **Single repo vs Multi-repo vs Organization-wide?**
-  - Na czym się skupić w MVP?
-  - Jak skalować później?
+  - What to focus on in MVP?
+  - How to scale later?
 
-### 4. Privacy vs Funkcjonalność  
+### 4. Privacy vs Functionality
 - **Fully local vs Hybrid vs Cloud?**
-  - Jak zachować privacy w dużych organizacjach?
-  - Jakie dane można indeksować?
+  - How to maintain privacy in large organizations?
+  - What data can be indexed?
 
-## Narzędzia do eksperymentowania
+## Tools for Experimentation
 
-### Proste testy koncepcyjne
+### Simple Conceptual Tests
 ```bash
-# Test parsowania Java files
+# Test parsing Java files
 find . -name "*.java" -exec grep -l "@Value" {} \;
 
-# Test znajdowania powiązań properties
+# Test finding property relationships
 grep -r "app\.feature\.enabled" . --include="*.java" --include="*.yml" --include="*.properties"
 
-# Test wzorców w HTTP files
+# Test patterns in HTTP files
 find . -name "*.http" -exec grep -l "POST.*api" {} \;
 ```
 
-### Prototypy z Tree-sitter
+### Tree-sitter Prototypes
 ```bash
-# Zainstaluj tree-sitter Python bindings
+# Install tree-sitter Python bindings
 pip install tree-sitter tree-sitter-java tree-sitter-yaml
 
-# Eksperymentuj z parsowaniem
+# Experiment with parsing
 cd research/experiments
 python tree_sitter_test.py
 ```
 
-### Testy z bazami danych
+### Database Tests
 ```bash
 # Neo4j local (Docker)
 docker run --name neo4j-test -p 7687:7687 -p 7474:7474 -e NEO4J_AUTH=neo4j/password neo4j
 
-# Qdrant local (Docker)  
+# Qdrant local (Docker)
 docker run -p 6333:6333 qdrant/qdrant
 
 # SQLite - no setup needed
 sqlite3 test_dependencies.db
 ```
 
-## Dokumentowanie decyzji
+## Documenting Decisions
 
-Dla każdej ważnej decyzji stwórz ADR (Architecture Decision Record):
+For each important decision, create an ADR (Architecture Decision Record):
 
 ```bash
 mkdir -p docs/decisions
-# Używaj formatu: docs/decisions/001-database-choice.md
+# Use format: docs/decisions/001-database-choice.md
 ```
 
-Przykładowa struktura ADR:
+Example ADR structure:
 ```markdown
 # ADR-001: Database Choice for Dependency Storage
 
 ## Context
-[Opis sytuacji i opcji]
+[Description of situation and options]
 
-## Decision  
-[Podjęta decyzja]
+## Decision
+[Decision made]
 
 ## Rationale
-[Uzasadnienie]
+[Justification]
 
 ## Consequences
-[Przewidywane konsekwencje]
+[Expected consequences]
 ```
 
-## Walidacja koncepcji
+## Concept Validation
 
-### Z potencjalnymi użytkownikami
-- **Rozmowy z developerami** - czy problem jest realny?
-- **Demo prototypu** - czy rozwiązanie ma sens?
-- **Feedback na MVP** - co jest most important?
+### With Potential Users
+- **Developer interviews** - is the problem real?
+- **Prototype demo** - does the solution make sense?
+- **MVP feedback** - what is most important?
 
-### Techniczna walidacja
-- **Performance tests** - czy skaluje się na duże repozytoria?
-- **Accuracy tests** - czy dependency detection jest dokładny?
-- **Integration tests** - czy MCP integration działa?
+### Technical Validation
+- **Performance tests** - does it scale to large repositories?
+- **Accuracy tests** - is dependency detection accurate?
+- **Integration tests** - does MCP integration work?
 
-## Następne kroki
+## Next Steps
 
-Po zakończeniu pracy koncepcyjnej:
+After completing conceptual work:
 
-1. **Sfinalizuj architekturę** - wybierz konkretne podejście
-2. **Zdefiniuj MVP scope** - co robimy w pierwszej wersji
-3. **Stwórz plan implementacji** - roadmap na kolejne miesiące
-4. **Rozpocznij prototyping** - pierwszy działający kod
+1. **Finalize architecture** - choose specific approach
+2. **Define MVP scope** - what we do in first version
+3. **Create implementation plan** - roadmap for next months
+4. **Start prototyping** - first working code
 
 ---
 
-**Pamiętaj**: Lepiej spędzić 2-3 tygodnie na solidnej analizie koncepcji niż 2-3 miesiące na implementacji złego rozwiązania. Ten etap jest kluczowy dla sukcesu całego projektu.
+**Remember**: Better to spend 2-3 weeks on solid conceptual analysis than 2-3 months implementing the wrong solution. This stage is crucial for the success of the entire project.

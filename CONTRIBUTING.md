@@ -1,12 +1,52 @@
-# GitHub Organization Guide with AI Tools
+# Contributing to ContextFlow
 
-This document outlines how to organize work on GitHub for the MCP Knowledge Index project, leveraging AI tools effectively during the initial development phase.
+Thank you for your interest in contributing to ContextFlow! This project is in the research and design phase, but we welcome feedback, ideas, and code contributions.
 
-## Project Setup Strategy
+We look forward to your ideas and contributions!
 
-### Repository Structure
+## How to Contribute
+
+### Research & Design Contributions
+- Open an issue describing your experience with AI development tools and what problems you face.
+- Share Your Pain Points: Submit real-world scenarios that ContextFlow should support.
+- Review and comment on research documents in the `research/` directory.
+- Suggest improvements to architecture, context management, or integration patterns.
+
+### Code Contributions
+- Submit a pull request with a clear description of your changes.
+- Follow the roadmap in `README.md` and check open issues/projects for tasks.
+- Fork the repository and create a feature branch.
+- All new features should be covered by a short design note or test case.
+- Write clear, maintainable code and add comments where context is important.
+- Document architectural decisions in ADR format (see `research/problem-analysis/ASSUMPTION_INVALIDATION.md`).
+- Prefer local, open-source solutions for all integrations.
+
+## Development Guidelines
+
+- `CONCEPTUAL_WORK_GUIDE.md` — Conceptual workflow and guidelines
+- `research/` — Problem analysis, architecture options, experiments
+- `MVP.md` — MVP architecture and stack
+- `README.md` — Project overview, vision, and roadmap
+
+## Communication
+
+- Email: contact@contextflow.dev
+- Discussions: [GitHub Discussions](https://github.com/contextflow/contextflow/discussions)
+- Issues: [GitHub Issues](https://github.com/contextflow/contextflow/issues)
+
+## License
+
+ContextFlow is MIT licensed. See `LICENSE` for details.
+
+## GitHub Organization and Workflow with AI Tools
+
+This section outlines how to organize work on GitHub for the ContextFlow project, leveraging AI tools effectively during the initial development phase.
+
+### Project Setup Strategy
+
+#### Repository Structure
 ```
-mcp-knowledge-index/
+contextflow/
 ├── .github/
 │   ├── workflows/           # GitHub Actions CI/CD
 │   ├── ISSUE_TEMPLATE/      # Issue templates for features, bugs
@@ -19,9 +59,9 @@ mcp-knowledge-index/
 └── examples/                # Example configurations
 ```
 
-## GitHub Project Management with AI
+### GitHub Project Management with AI
 
-### 1. Issues and Epic Planning
+#### 1. Issues and Epic Planning
 
 **Create Issue Templates:**
 - **Feature Request**: For new components (MCP server, indexers, etc.)
@@ -46,7 +86,7 @@ Based on the MVP roadmap Phase 1, create GitHub issues for:
 Include acceptance criteria, technical requirements, and dependencies.
 ```
 
-### 2. Milestone-Based Development
+#### 2. Milestone-Based Development
 
 **Phase-Based Milestones:**
 - **Phase 1**: Core MCP + Neo4j (2-3 weeks)
@@ -59,7 +99,7 @@ Include acceptance criteria, technical requirements, and dependencies.
 - Generate time estimates based on component complexity
 - Create dependency graphs between issues
 
-### 3. Branch Strategy
+#### 3. Branch Strategy
 
 **Git Flow for AI-Assisted Development:**
 ```
@@ -77,13 +117,13 @@ Use consistent patterns that AI can understand:
 - `bugfix/issue-{number}-{short-description}`
 - `docs/update-{section}`
 
-## AI Tool Integration
+### AI Tool Integration
 
-### 1. GitHub Copilot Configuration
+#### 1. GitHub Copilot Configuration
 
 Create `.github/copilot-instructions.md`:
 ```markdown
-# GitHub Copilot Instructions for MCP Knowledge Index
+# GitHub Copilot Instructions for ContextFlow
 
 ## Project Context
 This is a local knowledge system MVP integrating Neo4j, Qdrant, and MCP server.
@@ -102,7 +142,7 @@ This is a local knowledge system MVP integrating Neo4j, Qdrant, and MCP server.
 - Follow Neo4j best practices for graph queries
 ```
 
-### 2. GitHub Actions with AI
+#### 2. GitHub Actions with AI
 
 **AI-Generated Workflows:**
 ```yaml
@@ -125,7 +165,7 @@ jobs:
 - Automated integration tests for Neo4j/Qdrant connections
 - AI-powered test data generation for knowledge graph scenarios
 
-### 3. Documentation Automation
+#### 3. Documentation Automation
 
 **AI-Generated Documentation:**
 - Auto-generate API docs from MCP tool docstrings
@@ -141,9 +181,9 @@ Generate comprehensive API documentation for the MCP server tools, including:
 4. Integration patterns with AI assistants
 ```
 
-## Workflow Recommendations
+### Workflow Recommendations
 
-### 1. Sprint Planning with AI
+#### 1. Sprint Planning with AI
 
 **Weekly Sprint Setup:**
 1. **AI Analysis**: Review previous week's commits and issues
@@ -153,15 +193,15 @@ Generate comprehensive API documentation for the MCP server tools, including:
 
 **Example AI Sprint Planning Prompt:**
 ```
-Analyze the current state of the MCP Knowledge Index project.
+Analyze the current state of the ContextFlow project.
 Based on completed work and remaining Phase 1 tasks:
 1. Estimate effort for each open issue
-2. Identify dependencies between tasks  
+2. Identify dependencies between tasks
 3. Suggest optimal task ordering for next sprint
 4. Highlight potential integration challenges
 ```
 
-### 2. Code Review Process
+#### 2. Code Review Process
 
 **AI-Enhanced Reviews:**
 - Use GitHub Copilot for code suggestions during review
@@ -169,7 +209,7 @@ Based on completed work and remaining Phase 1 tasks:
 - Automated architecture compliance checking
 - Consistency verification across MCP tools
 
-### 3. Release Management
+#### 3. Release Management
 
 **AI-Assisted Releases:**
 - Auto-generate changelog from commit messages
@@ -177,17 +217,17 @@ Based on completed work and remaining Phase 1 tasks:
 - Automated release note creation
 - Deployment validation scripts
 
-## Best Practices for AI Development
+### Best Practices for AI Development
 
-### 1. Prompt Engineering for Project Context
+#### 1. Prompt Engineering for Project Context
 
 **Effective Prompts:**
-- Always include project context (MCP Knowledge Index)
+- Always include project context (ContextFlow)
 - Reference specific phases and components
 - Include architecture constraints (local-first, privacy)
 - Specify technology stack (Neo4j, Qdrant, Python)
 
-### 2. AI-Generated Test Data
+#### 2. AI-Generated Test Data
 
 **Knowledge Graph Test Scenarios:**
 - Generate realistic Jira ticket relationships
@@ -195,30 +235,30 @@ Based on completed work and remaining Phase 1 tasks:
 - Mock documentation structures for testing
 - Synthetic ADR/RFC examples
 
-### 3. Continuous Learning
+#### 3. Continuous Learning
 
 **AI Model Training Data:**
 - Document decisions and rationale for future AI context
 - Maintain examples of successful MCP integrations
 - Create patterns library for knowledge system development
 
-## Tools Integration
+### Tools Integration
 
-### Recommended AI Tools Stack:
+#### Recommended AI Tools Stack:
 1. **GitHub Copilot**: Code generation and completion
 2. **Warp AI**: Terminal assistance and workflow automation
 3. **ChatGPT/Claude**: Architecture planning and documentation
 4. **GitHub Actions**: CI/CD automation with AI integration
 
-### Custom AI Assistants:
+#### Custom AI Assistants:
 Consider creating specialized GPTs for:
 - **MCP Development**: Specialized in Model Context Protocol patterns
 - **Neo4j Query Assistant**: Graph database query optimization
 - **Knowledge Modeling**: C4 architecture and relationships
 
-## Monitoring and Analytics
+### Monitoring and Analytics
 
-### AI-Powered Insights:
+#### AI-Powered Insights:
 - Track development velocity by phase
 - Identify bottlenecks in AI-assisted development
 - Measure code quality improvements with AI tools

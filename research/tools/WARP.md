@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-This is the **MCP Knowledge Index** project - a local knowledge system MVP for developers in large organizations. The system integrates code repositories, Jira tickets, documentation (Confluence, SharePoint, Teams), and architectural decision records (ADR/RFC) to provide AI assistants with comprehensive project context.
+This is the **ContextFlow** project - a local knowledge system MVP for developers in large organizations. The system integrates code repositories, Jira tickets, documentation (Confluence, SharePoint, Teams), and architectural decision records (ADR/RFC) to provide AI assistants with comprehensive project context.
 
 ## Architecture
 

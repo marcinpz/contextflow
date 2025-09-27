@@ -1,4 +1,5 @@
 # ContextFlow
+
 *Context Engineering Platform for AI-Powered Development*
 
 **ContextFlow** transforms generic AI assistants into organization-aware development partners through intelligent context management, solving the critical problems that make AI development assistance frustrating and unreliable.
@@ -6,15 +7,17 @@
 ## The Problems We Solve
 
 ### 🔥 **Context Bloat Kills AI Performance**
-```
+
+```ini
 Day 1: AI agent works perfectly
 Day 10: Getting slower, more MCP tools added
 Day 20: Context compacting, losing previous decisions
 Result: 🔄 Constant restarts, lost productivity
 ```
 
-### 🔗 **AI Forgets Cross-File Dependencies** 
-```
+### 🔗 **AI Forgets Cross-File Dependencies**
+
+```yaml
 ❌ Current AI: "Rename 'email' to 'emailAddress'"
    [Changes only current file] ✅ Done!
    Result: 🔥 Breaks 7 files, tests fail
@@ -28,14 +31,16 @@ Result: 🔄 Constant restarts, lost productivity
 ```
 
 ### 📉 **Requirements Change Mid-Development**
-```
+
+```ini
 Plan: REST API integration
 Reality: API too slow → switch to Pub/Sub
 Result: 🗑️ Orphaned REST code, async refactor, config chaos
 ```
 
 ### 🏗️ **Integration Hell**
-```
+
+```ini
 Need: Jira + Slack + Email + Confluence integration
 Reality: Different APIs, auth methods, rate limits
 Result: 😵 Maintenance nightmare, inconsistent patterns
@@ -91,31 +96,36 @@ graph TB
     MCPServer --> Claude
 ```
 
-## Quick Start
+## Project Vision (Future State)
+
+*The following sections describe the intended functionality of ContextFlow once it reaches the implementation phase. The tool is currently in the research and design stage.*
 
 ### Prerequisites
+
 - Python 3.11+
 - Node.js 18+ (for MCP servers)
 - Git repository to analyze
 
 ### Installation
+
 ```bash
-# Install ContextFlow
+# Install ContextFlow (conceptual)
 uv pip install contextflow
 
 # Or clone and install from source
-git clone https://github.com/your-org/contextflow
+git clone https://github.com/contextflow/contextflow
 cd contextflow
 uv pip install -e .
 ```
 
 ### Basic Usage
+
 ```bash
 # Start ContextFlow in your project directory
 contextflow init
 contextflow start
 
-# Your AI assistants now have access to:
+# Your AI assistants will then have access to:
 # - Cross-file dependencies
 # - Project context from Jira
 # - Team decisions from Slack
@@ -123,6 +133,7 @@ contextflow start
 ```
 
 ### Configuration
+
 ```yaml
 # contextflow.yml
 contextflow:
@@ -170,25 +181,30 @@ contextflow:
 ### Roadmap
 
 #### Phase 1: Core Context Engineering (4-5 weeks)
+
 - [x] Problem analysis and solution design
+- [ ] **Phase 1 Goal**: Build a functional proof-of-concept demonstrating core features.
 - [ ] Dynamic context optimization
 - [ ] Cross-file dependency tracking
 - [ ] Basic MCP server integration
 - [ ] SQLite-based storage
 
 #### Phase 2: Plugin Integration (3-4 weeks)
+
 - [ ] MCP client manager
 - [ ] Jira integration
 - [ ] Slack integration
 - [ ] Privacy filtering
 
 #### Phase 3: Advanced Features (3-4 weeks)
+
 - [ ] Assumption tracking
 - [ ] Vector search integration
 - [ ] Context caching and summarization
 - [ ] Advanced pattern recognition
 
 #### Phase 4: Production Ready (3-4 weeks)
+
 - [ ] Neo4j migration
 - [ ] Performance optimization
 - [ ] Enterprise deployment
@@ -202,9 +218,10 @@ We're in the early research phase and looking for:
 - **Technical Feedback**: Architecture and implementation suggestions
 - **Use Case Examples**: Real-world scenarios we should support
 
-### Research Documents
+### Research & Design Documents
 
-Comprehensive analysis available in [`research/`](research/) directory:
+Comprehensive analysis is available in the [`research/`](research/) directory:
+
 - [Context Engineering Concept](research/problem-analysis/CONTEXT_ENGINEERING.md)
 - [Cross-File Dependencies](research/problem-analysis/CROSS_FILE_DEPENDENCIES.md)
 - [Context Optimization](research/problem-analysis/CONTEXT_OPTIMIZATION.md)
@@ -216,6 +233,7 @@ Comprehensive analysis available in [`research/`](research/) directory:
 ### The Problem with Current AI Assistants
 
 AI assistants like GitHub Copilot and Cursor are powerful but limited by:
+
 - No organizational context
 - Context bloat over time
 - Missing cross-file relationships
@@ -237,8 +255,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-- **Issues**: [GitHub Issues](https://github.com/your-org/contextflow/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/contextflow/discussions)
+- **Issues**: [GitHub Issues](https://github.com/contextflow/contextflow/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/contextflow/contextflow/discussions)
 - **Email**: contact@contextflow.dev
 
 ---
