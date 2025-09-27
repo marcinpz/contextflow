@@ -290,19 +290,36 @@ def generate_contextual_documentation(self, code_element: str) -> Documentation:
 
 ## Context Engineering Challenges
 
-### Challenge 1: Context Relevance
+### Challenge 1: Context Bloat (CRITICAL)
+**Problem**: Context accumulates over time causing AI compacting and context loss
+**Symptoms**: 
+- AI agents become slower as context grows
+- Context compacting loses important details
+- Need to restart conversations frequently
+- MCP tool proliferation slows responses
+
+**Solution**: Dynamic Context Optimization
+- Hierarchical context architecture (Core/Domain/Tool/Session layers)
+- Query classification for context selection
+- Just-in-time context loading
+- Context caching and summarization
+- Dynamic MCP tool loading
+
+**See**: `research/problem-analysis/CONTEXT_OPTIMIZATION.md`
+
+### Challenge 2: Context Relevance
 **Problem**: Too much context overwhelms, too little context under-informs
 **Solution**: Machine learning-based relevance scoring and user feedback loops
 
-### Challenge 2: Context Freshness
+### Challenge 3: Context Freshness
 **Problem**: Context becomes stale as systems evolve
 **Solution**: Real-time updates and automatic staleness detection
 
-### Challenge 3: Context Privacy
+### Challenge 4: Context Privacy
 **Problem**: Sensitive information in context must be protected
 **Solution**: Context classification and filtering systems
 
-### Challenge 4: Context Scalability  
+### Challenge 5: Context Scalability  
 **Problem**: Large organizations have massive amounts of potential context
 **Solution**: Hierarchical context indexing and intelligent pre-filtering
 

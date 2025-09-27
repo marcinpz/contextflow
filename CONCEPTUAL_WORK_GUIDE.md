@@ -36,7 +36,12 @@ research/
 - Przykłady: Controller → Properties → HTTP files
 - Jak to wpływa na produktywność deweloperów?
 
-### 3. **COMPETITIVE_ANALYSIS.md** - Co już istnieje
+### 4. **CONTEXT_OPTIMIZATION.md** - Problem context bloat
+- Dlaczego AI agenty stają się coraz wolniejsze?
+- Context compacting i utrata kontekstu
+- Strategie optymalizacji kontekstu
+
+### 5. **COMPETITIVE_ANALYSIS.md** - Co już istnieje
 - Sourcegraph, GitHub Copilot, Backstage...
 - Gdzie są luki w istniejących rozwiązaniach?
 - Co robimy inaczej/lepiej?
