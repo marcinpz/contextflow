@@ -1,0 +1,22 @@
+app:
+  database:
+    url: jdbc:postgresql://localhost:5432/myapp
+    username: ${DB_USER:default}
+    password: ${DB_PASS:secret}
+    driver: org.postgresql.Driver
+
+  cache:
+    enabled: true
+    ttl: 3600
+
+  email:
+    smtp:
+      host: smtp.gmail.com
+      port: 587
+      username: ${EMAIL_USER}
+      password: ${EMAIL_PASS}
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
