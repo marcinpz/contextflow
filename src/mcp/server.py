@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from neo4j_integration.client import connect_to_neo4j, Neo4jClient
 from src.mcp.tools.github_tools import GitHubTools
+from src.code_indexer.indexer import CodeIndexer
 
 server = Server("contextflow-mcp")
 
@@ -23,16 +24,19 @@ class ContextFlowTools:
     def __init__(self):
         self.neo4j_client: Neo4jClient = None
         self.github_tools: GitHubTools = None
+        self.code_indexer: CodeIndexer = None
 
     def initialize(self):
         """Initialize connections to backend services."""
         try:
             self.neo4j_client = connect_to_neo4j()
             self.github_tools = GitHubTools()
+            self.code_indexer = CodeIndexer()
         except Exception as e:
             print(f"Failed to initialize ContextFlow tools: {e}")
             self.neo4j_client = None
             self.github_tools = None
+            self.code_indexer = None
 
 # Global instance
 tools = ContextFlowTools()
@@ -123,9 +127,43 @@ def search_code_context(search_term: str, file_types: List[str] = None) -> str:
     Returns:
         Code search results
     """
-    # Placeholder for code search using Tree-sitter
-    # This would integrate with the code indexing from Phase 1
-    return f"Code search for '{search_term}' not yet implemented. Coming in Tree-sitter integration."
+    if not tools.code_indexer:
+        return "Error: Code indexer not initialized"
+
+    try:
+        # For now, search in current directory
+        # In production, this would search configured codebases
+        if file_types is None:
+            file_types = ['.py', '.js', '.ts']
+
+        results = tools.code_indexer.index_directory('.', file_types)
+
+        # Simple search for the term in entity names
+        matches = []
+        for result in results:
+            for entity in result['entities']:
+                if search_term.lower() in entity['name'].lower():
+                    matches.append({
+                        'file': result['file_path'],
+                        'entity': entity
+                    })
+
+        if not matches:
+            return f"No code entities found matching '{search_term}'"
+
+        output = f"Found {len(matches)} code entities matching '{search_term}':\n\n"
+        for match in matches[:10]:  # Limit to 10 results
+            entity = match['entity']
+            output += f"📁 {match['file']}:{entity['start_line']}\n"
+            output += f"   {entity['type']}: {entity['name']}\n\n"
+
+        if len(matches) > 10:
+            output += f"... and {len(matches) - 10} more matches\n"
+
+        return output
+
+    except Exception as e:
+        return f"Error searching code: {str(e)}"
 
 if __name__ == "__main__":
     print("🚀 Starting ContextFlow MCP Server...")
@@ -134,6 +172,6 @@ if __name__ == "__main__":
     print("Available tools:")
     print("- query_graph: Execute Cypher queries against Neo4j")
     print("- find_repo_issues: Find GitHub issues by repository")
-    print("- search_code_context: Search code using Tree-sitter")
+    print("- search_code_context: Search code entities in indexed files")
 
     server.run()
