@@ -1,0 +1,14 @@
+function: connect_to_neo4j
+description: Establish connection to local Neo4j instance
+parameters:
+  uri:
+    type: str
+    description: Neo4j connection URI (default bolt://localhost:7687)
+  user:
+    type: str
+    description: Neo4j username (default neo4j)
+  password:
+    type: str
+    description: Neo4j password
+return_type: Neo4jClient
+return_description: Connected Neo4j client instance

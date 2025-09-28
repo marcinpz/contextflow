@@ -1,0 +1,8 @@
+function: create_schema
+description: Create C4 modeling schema in Neo4j
+parameters:
+  client:
+    type: Neo4jClient
+    description: Connected Neo4j client instance
+return_type: void
+return_description: Creates Context, Container, Component, Code nodes and relationships
