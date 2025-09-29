@@ -5,7 +5,6 @@ This module provides Model Context Protocol tools for querying GitHub data
 stored in Neo4j, making it available to AI assistants.
 """
 
-import json
 from typing import Any, Dict, List
 from neo4j import GraphDatabase
 

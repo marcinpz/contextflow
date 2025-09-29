@@ -1,0 +1,5 @@
+function: install_neo4j
+description: Install Neo4j Community Edition locally
+parameters: {}
+return_type: bool
+return_description: True if installation successful, False otherwise

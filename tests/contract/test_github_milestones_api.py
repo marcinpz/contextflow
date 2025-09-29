@@ -7,7 +7,7 @@ as defined in contracts/github-api.yaml
 
 import pytest
 from github import Github
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional
 import os
 

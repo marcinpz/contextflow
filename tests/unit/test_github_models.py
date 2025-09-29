@@ -10,8 +10,6 @@ from src.integrations.github.models import (
     GitHubProject,
     GitHubMilestone,
     GitHubIssueResponse,
-    GitHubProjectResponse,
-    GitHubMilestoneResponse,
     GitHubRepositoryResponse,
 )
 
