@@ -1,0 +1,216 @@
+openapi: 3.0.3
+info:
+  title: GitHub API Contract for ContextFlow
+  version: 1.0.0
+  description: Contract for GitHub API endpoints used in ContextFlow integration
+
+servers:
+  - url: https://api.github.com
+    description: GitHub REST API v3
+
+paths:
+  /repos/{owner}/{repo}/issues:
+    get:
+      summary: List repository issues
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+            enum: [open, closed, all]
+            default: open
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Issue'
+        '404':
+          description: Repository not found
+        '403':
+          description: Forbidden
+
+  /repos/{owner}/{repo}/projects:
+    get:
+      summary: List repository projects
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+
+  /repos/{owner}/{repo}/milestones:
+    get:
+      summary: List repository milestones
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+            enum: [open, closed, all]
+            default: open
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Milestone'
+
+components:
+  schemas:
+    Issue:
+      type: object
+      required:
+        - id
+        - number
+        - title
+        - state
+      properties:
+        id:
+          type: integer
+        number:
+          type: integer
+        title:
+          type: string
+        body:
+          type: string
+        state:
+          type: string
+          enum: [open, closed]
+        labels:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+        assignees:
+          type: array
+          items:
+            type: object
+            properties:
+              login:
+                type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        closed_at:
+          type: string
+          format: date-time
+          nullable: true
+
+    Project:
+      type: object
+      required:
+        - id
+        - name
+        - state
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        body:
+          type: string
+        state:
+          type: string
+          enum: [open, closed]
+        number:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Milestone:
+      type: object
+      required:
+        - id
+        - number
+        - title
+        - state
+      properties:
+        id:
+          type: integer
+        number:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+          enum: [open, closed]
+        due_on:
+          type: string
+          format: date
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        open_issues:
+          type: integer
+        closed_issues:
+          type: integer

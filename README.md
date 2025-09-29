@@ -161,7 +161,7 @@ contextflow:
 
 ### Core Components
 
-- **Context Collector**: Gathers information from code, Jira, Slack, email
+- **Context Collector**: Gathers information from code, Jira, Slack, email, GitHub
 - **Context Optimizer**: Dynamically selects relevant context per query
 - **Dependency Tracker**: Maps relationships between files, configs, docs
 - **Assumption Manager**: Tracks architectural decisions and handles changes
@@ -192,6 +192,7 @@ contextflow:
 #### Phase 2: Plugin Integration (3-4 weeks)
 
 - [ ] MCP client manager
+- [x] GitHub integration (issues, projects, milestones)
 - [ ] Jira integration
 - [ ] Slack integration
 - [ ] Privacy filtering
