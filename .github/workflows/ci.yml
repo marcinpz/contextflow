@@ -29,8 +29,8 @@ jobs:
     - name: Install dependencies
       run: uv sync
 
-    - name: Run linting
-      run: uv run ruff check .
+     - name: Run linting
+       run: uv run ruff check .
 
      - name: Run type checking
        run: uv run mypy --no-namespace-packages src/ || true
