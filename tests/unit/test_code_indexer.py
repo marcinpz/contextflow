@@ -1,6 +1,5 @@
 """Unit tests for code indexer."""
 
-import pytest
 import tempfile
 import os
 from src.code_indexer.indexer import CodeIndexer

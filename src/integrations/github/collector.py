@@ -27,8 +27,6 @@ from src.config.github_config import (
     GITHUB_LABEL_MILESTONE,
     REL_BELONGS_TO,
     REL_HOSTED_IN,
-    REL_ASSIGNED_TO,
-    REL_TARGETS,
 )
 
 logger = logging.getLogger(__name__)

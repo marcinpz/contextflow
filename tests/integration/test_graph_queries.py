@@ -8,7 +8,7 @@ from src.neo4j_integration.client import connect_to_neo4j
 def test_graph_queries():
     """Test that graph queries work for C4 entities."""
     # Connect to Neo4j
-    client = connect_to_neo4j(
+    connect_to_neo4j(
         uri="bolt://localhost:7687",
         user="neo4j",
         password="password"

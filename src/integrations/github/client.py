@@ -7,12 +7,8 @@ using PyGitHub library with proper error handling and rate limiting.
 
 import time
 import logging
-from typing import List, Optional, Iterator
+from typing import Optional, Iterator
 from github import Github, GithubException
-from github.Repository import Repository
-from github.Issue import Issue
-from github.Project import Project
-from github.Milestone import Milestone
 
 from .models import (
     GitHubRepositoryResponse,

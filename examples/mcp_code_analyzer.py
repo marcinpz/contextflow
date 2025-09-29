@@ -3,10 +3,9 @@
 MCP Server używający Tree-sitter do analizy kodu i dostarczania kontekstu AI
 """
 
-from mcp import Tool
 from mcp.server import Server
 import os
-from typing import List, Dict, Any
+from typing import List, Dict
 
 # Import naszego parsera
 from example_tree_sitter import CodeParser
@@ -82,7 +81,7 @@ class CodeContextManager:
                 for i, line in enumerate(lines, 1):
                     if text.strip() in line.strip():
                         return i
-        except:
+        except Exception:
             pass
         return 0
 

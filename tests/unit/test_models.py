@@ -1,6 +1,5 @@
 """Unit tests for Neo4j models."""
 
-import pytest
 from src.neo4j_integration.models import Context, Container, Component, Code
 
 

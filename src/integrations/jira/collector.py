@@ -2,7 +2,7 @@
 
 from typing import List, Dict, Any
 from .client import JiraClient
-from .models import JiraIssue, JiraProject
+from .models import JiraIssue
 from neo4j_integration.client import Neo4jClient
 
 

@@ -5,7 +5,7 @@ Provides AI assistants with tools to query knowledge graphs and search code.
 """
 
 from mcp.server import Server
-from typing import List, Dict, Any
+from typing import List
 import os
 import sys
 

@@ -3,7 +3,7 @@
 Przykład użycia Tree-sitter do parsowania Java i ekstrakcji zależności
 """
 
-from tree_sitter import Language, Parser
+from tree_sitter import Parser
 import tree_sitter_java as ts_java
 import tree_sitter_yaml as ts_yaml
 

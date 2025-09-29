@@ -2,7 +2,6 @@
 
 import requests
 from typing import Dict, List, Any, Optional
-import time
 
 
 class JiraClient:
